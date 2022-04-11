@@ -1,6 +1,5 @@
-package com.company;
+package com.company.example;
 
-import java.io.*;
 import java.util.*;
 
 class BFS_Graph
