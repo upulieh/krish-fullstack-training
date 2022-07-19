@@ -1,0 +1,10 @@
+package com.krishantha.training.salesmanager.config;
+
+//Use @Configuration annotation on top class
+//Methods use @Bean annotation to instances spring beans
+//@Bean is method level annotation
+//Classes and method name can be anything
+
+public class ApplicationConfiguration {
+
+}
