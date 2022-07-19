@@ -1,15 +1,2 @@
 INDEX VERSION 1.131+C:\Users\iresh\Desktop\Virtusa\LP Training\krish-fullstack-training\SpringFundamentals\.metadata\.plugins\org.eclipse.jdt.core
-1304611282.index
-3330566733.index
-4053625484.index
-2201547695.index
-1879965897.index
-1570258636.index
-1617704052.index
-641402072.index
-2849646255.index
 1865797976.index
-2998507920.index
-40598476.index
-3298176529.index
-127138243.index
