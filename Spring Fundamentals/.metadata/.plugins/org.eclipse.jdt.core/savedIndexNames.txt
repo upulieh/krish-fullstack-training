@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Virtusa\krish-fullstack-training\Spring Fundamentals\.metadata\.plugins\org.eclipse.jdt.core
+2695070779.index
+1865797976.index
+2265585152.index
