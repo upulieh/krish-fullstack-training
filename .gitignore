@@ -1,14 +1,14 @@
 */.metadata/
 */.classpath
-*/.project
+*/.project/
 */.settings/
 
-*/.idea
+*/.idea/
 
-*/.browserslistrc
-*/.editorconfig
-*/.vscode
-*/.angular
+*/.browserslistrc/
+*/.editorconfig/
+*/.vscode/
+*/.angular/
 
-*/.mvn
-*/.settings
+*/.mvn/
+*/.settings/
