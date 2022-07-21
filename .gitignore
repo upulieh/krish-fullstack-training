@@ -1,32 +1,40 @@
-*.yml
+#Angular
+*/.project
+*/.metadata
+AngularDemo/cosmos-ems/.angular/
+AngularDemo/cosmos-ems/.browserslistrc
+AngularDemo/cosmos-ems/.editorconfig
+AngularDemo/cosmos-ems/.vscode/
 
+#LambdaExpressions
+LambdaExpressions/.idea
+LambdaExpressions/krish-fullstack-training.iml
+LambdaExpressions/out
+
+#Microservices
+MicroservicesDemo/demo-application/target/classes/com/
 .metadata/
-**/.location
-properties.index
-*.tree
-**/.safetable
-**/.settings
-*.xmi
-*.index
-*.dat
-*.log
-*.properties
-*.ini
+MicroservicesDemo/demo-application/.classpath
+MicroservicesDemo/demo-application/.mvn
+MicroservicesDemo/demo-application/.project
+MicroservicesDemo/demo-application/.settings
+MicroservicesDemo/demo-application/src/main/resources/application.yml
+MicroservicesDemo/demo-application/target/classes/application.yml
 
-**/.project
-*.class
+#ServletDemo
+ServletDemo/.classpath
+ServletDemo/.project
+ServletDemo/.settings
+ServletDemo/build/
 
-#from earlier
-*.classpath
-*.settings
-*.idea
-*.browserslistrc/
-*.editorconfig/
-*.vscode/
-*.angular/
+#SpringFundamentals
+SpringFundamentals/*/.classpath
+SpringFundamentals/*/.project
+SpringFundamentals/*/.settings/
+SpringFundamentals/*/bin/
 
-*.mvn/
-*.settings/
-
-
-
+#WaterDroppingProblem
+WaterDroppingProblem/.classpath
+WaterDroppingProblem/.project
+WaterDroppingProblem/.settings/
+WaterDroppingProblem/bin/
