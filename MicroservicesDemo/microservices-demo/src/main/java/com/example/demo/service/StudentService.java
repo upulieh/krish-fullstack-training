@@ -4,4 +4,5 @@ import com.example.demo.model.Student;
 
 public interface StudentService {
 	Student save(Student s);
+	Student fetchStudentById(int id);
 }
