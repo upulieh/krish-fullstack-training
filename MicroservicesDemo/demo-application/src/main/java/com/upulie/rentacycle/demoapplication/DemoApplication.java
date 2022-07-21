@@ -1,4 +1,4 @@
-package com.upulie.rentacycle;
+package com.upulie.rentacycle.demoapplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.upulie.rentacycle;
+package com.upulie.rentacycle.demoapplication;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

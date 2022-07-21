@@ -1,3 +1,6 @@
+server:
+ port: 8080
+
 management:
   endpoint:
     beans:
@@ -6,4 +9,6 @@ management:
     web:
       exposure:
         include: "*"
+        
+
 
