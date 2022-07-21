@@ -12,12 +12,7 @@ LambdaExpressions/krish-fullstack-training.iml
 LambdaExpressions/out
 
 #Microservices
-MicroservicesDemo/demo-application/target/classes/com/
 .metadata/
-MicroservicesDemo/demo-application/.classpath
-MicroservicesDemo/demo-application/.mvn
-MicroservicesDemo/demo-application/.project
-MicroservicesDemo/demo-application/.settings
 MicroservicesDemo/demo-application/src/main/resources/application.yml
 MicroservicesDemo/demo-application/target/classes/application.yml
 
