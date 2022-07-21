@@ -1,5 +1,5 @@
 #Angular
-*/.project
+Angular/.project
 */.metadata
 AngularDemo/cosmos-ems/.angular/
 AngularDemo/cosmos-ems/.browserslistrc
@@ -15,6 +15,11 @@ LambdaExpressions/out
 .metadata/
 MicroservicesDemo/demo-application/src/main/resources/application.yml
 MicroservicesDemo/demo-application/target/classes/application.yml
+MicroservicesDemo/*/.mvn/wrapper/maven-wrapper.jar
+MicroservicesDemo/*/.classpath
+MicroservicesDemo/*/HELP.md
+MicroservicesDemo/*/target/
+
 
 #ServletDemo
 ServletDemo/.classpath
