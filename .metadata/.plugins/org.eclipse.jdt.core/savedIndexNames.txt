@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\iresh\Desktop\Virtusa\LP Training\krish-fullstack-training\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-2695070779.index

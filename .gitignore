@@ -1,14 +1,32 @@
-*/.metadata/
-*/.classpath
-*/.project/
-*/.settings/
+*.yml
 
-*/.idea/
+.metadata/
+**/.location
+properties.index
+*.tree
+**/.safetable
+**/.settings
+*.xmi
+*.index
+*.dat
+*.log
+*.properties
+*.ini
 
-*/.browserslistrc/
-*/.editorconfig/
-*/.vscode/
-*/.angular/
+**/.project
+*.class
 
-*/.mvn/
-*/.settings/
+#from earlier
+*.classpath
+*.settings
+*.idea
+*.browserslistrc/
+*.editorconfig/
+*.vscode/
+*.angular/
+
+*.mvn/
+*.settings/
+
+
+
