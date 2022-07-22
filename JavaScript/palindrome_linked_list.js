@@ -27,16 +27,6 @@ class LinkedList {
     this.size++;
   }
 
-  printList() {
-    var curr = this.head;
-    var str = '';
-    while (curr) {
-      str += curr.element + ' ';
-      curr = curr.next;
-    }
-    console.log(str);
-  }
-
   reverseList() {
     var current = this.head,
       prev = null,
@@ -48,18 +38,31 @@ class LinkedList {
       current = next;
     }
     this.head = prev;
+    return this;
+  }
+
+  printList() {
+    var curr = this.head;
+    var str = '';
+    while (curr) {
+      str += curr.element + ' ';
+      curr = curr.next;
+    }
+    console.log(str);
+    return str;
   }
 }
 
-var ll = new LinkedList();
+let list = new LinkedList();
 
-ll.add(10);
-ll.add(20);
-ll.add(30);
-ll.add(40);
-ll.add(50);
+list.add(10);
+list.add(20);
+list.add(30);
+list.add(20);
+list.add(10);
 
-// returns 10 20 30 40 50
-ll.printList();
-ll.reverseList();
-ll.printList();
+if (list.printList() == list.reverseList().printList()) {
+  console.log('Linked list is a palindrome');
+} else {
+  console.log('Linked list is not a palindrome');
+}
