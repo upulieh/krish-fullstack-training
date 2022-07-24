@@ -57,5 +57,9 @@ grant types
 * password - client obtains and sends the un & pw to the authorization server
 * device code
 
+Video 9
+* Any files inside the resources folder is considered to be in the classpath (in a maven project)
+
+
 
 

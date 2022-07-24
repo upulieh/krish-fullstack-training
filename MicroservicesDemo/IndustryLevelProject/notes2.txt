@@ -1,0 +1,26 @@
+Asynchronous services
+Help reduce dependencies between services
+Helps reduce blocking calls that increase the latency and high throughput
+It is an event driven model
+Can avoid cascading failures due to thread /resource blocking/blocking
+Eg: severless-computing (AWS lambda) - helps deploye functions rather than services
+
+
+Asynchronous behaviours for services
+SOAP services were replaced by REST sevices
+REST services were made to be asynchronous
+However, using http (which is a synchronous protocol) makes it hard to achieve this.
+So systems usually implement alongside a messaging platform (Eg:  JMS - Java)
+The typical behaviour of a a messaging platform includes one end publishing to the server and the other end listening to the server.
+
+The project implements how this is done with Java
+After all the coding use,
+mvn clean install
+
+java -jar target/<artifact-name>-<version>.jar 1234556
+
+java -jar target/rent-process-task-0.0.1-SNAPSHOT.jar 1234556 
+gives valid driving license
+
+java -jar target/rent-process-task-0.0.1-SNAPSHOT.jar 1234556 
+gives invalid driving license

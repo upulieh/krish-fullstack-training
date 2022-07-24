@@ -1,0 +1,3 @@
+# add database connection details here
+ application:
+  name: asynchronous-task-demo
