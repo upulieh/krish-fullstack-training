@@ -1,37 +1,38 @@
 package com.training.upulie;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Problem1 {
+public class Problem2{
+	static List<Store> waterPours=new ArrayList<Store>();
 	
-	static int[][] pattern={
-			{0,0,0,0,0,0,0},
-			{1,0,0,0,0,0,0},
-			{0,0,0,1,0,0,0},
-			{0,0,0,0,0,0,0},
-			{1,1,1,0,0,1,0},
-			{0,0,0,0,0,0,1},
-			{0,0,0,0,0,0,0}
-			};
-	static int s=3;
+	int[][] pattern;
+	int col;
+	int row;
 	
-
+	public Problem2(int[][] pattern, int col, int row) {
+		this.pattern=pattern;
+		this.col=col;
+		this.row=row;
+		
+		start();
+	}
 	
-	public static void main(String args[]) {
+	public double[] start() {
 		System.out.println("*******************Problem**********************");
 		printArray(pattern);
 		
-		double[][] splittedWaterPaths = waterfall(pattern,s);
+		double[][] splittedWaterPaths = waterfall(pattern,row, col);
 		System.out.println("*******************Solution*********************");
 		printArray(splittedWaterPaths);
 		
-		double[] buckets = new double[pattern.length];
-		buckets = splittedWaterPaths[splittedWaterPaths.length-1];
-		System.out.println("************************************************");
-		printArray(buckets);
 		
+		System.out.println("************************************************");
+		printArray(splittedWaterPaths[splittedWaterPaths.length-1]);
+		return splittedWaterPaths[splittedWaterPaths.length-1];
 	}
-	public static double[][] waterfall(int[][] pattern,int s) {
+	
+	public double[][] waterfall(int[][] pattern,int r, int s) {
 //		System.out.println("Problem 1");
 //		System.out.println("s "+s);
 //		printArray(pattern);
@@ -40,7 +41,7 @@ public class Problem1 {
 		double[][] percentages = new double[pattern.length][pattern[0].length];
 		
 		//setting the initial percentage
-		percentages[0][s]=100.0;
+		percentages[r][s]=100.0;
 //		printArray(percentages);
 		
 		
@@ -55,11 +56,11 @@ public class Problem1 {
 //						printArray(percentages);
 					}else {
 						//if it is a wall, it will split
-						if(col==0) {
+						if(col==0) { //left most column
 //							System.out.println("1 "+"Splitting "+(row)+","+col+" from "+(row-1)+","+col +" Changing "+percentages[row][col+1]+" to "+percentages[row-1][col]/2.0);
 							percentages[row][col+1]=percentages[row-1][col]/2.0;
 //							printArray(percentages);
-						}else if(col == percentages[row].length-1) {
+						}else if(col == percentages[row].length-1) { //right most column
 //							System.out.println("2 "+"Splitting "+(row)+","+col+" from "+(row-1)+","+col +" Changing "+percentages[row][col+1]+" to "+percentages[row-1][col]/2.0);
 							percentages[row][col-1]=percentages[row-1][col]/2.0;
 //							printArray(percentages);
@@ -74,11 +75,19 @@ public class Problem1 {
 								//right close, left open
 //								System.out.println("right close, left open");
 								percentages[row][col-1]=percentages[row-1][col]; 
-							}else {
+							}else if(pattern[row][col-1]==0 & pattern[row][col+1]==0){
 								//both open (50%, 50%)
 //								System.out.println("both open (50%, 50%)");
 								percentages[row][col-1]=percentages[row-1][col]/2.0;
 								percentages[row][col+1]=percentages[row-1][col]/2.0;
+							}else{ //both closed, go in search for the hole in that direction								
+								//to the left
+								for(int x=(col-2);x>=0;x--) {
+									if(pattern[row][x]==0) {
+										//recursive pattern ?			
+										waterPours.add(new Store(pattern,row,x));
+									}	
+								}
 							}
 							
 //							System.out.println("3 "+"Splitting "+(row)+","+(col-1)+" from "+(row-1)+","+col +" changing "+percentages[row][col+1]+" to "+percentages[row][col-1]);
@@ -91,15 +100,15 @@ public class Problem1 {
 		}
 		return percentages;
 	}
-	
-	public static boolean isAHole(int row,int col) {
+
+	public boolean isAHole(int row,int col) {
 		if(pattern[row][col]==1)
 			return false; //is a wall
 		else 
 			return true; //is a hole
 	}
 	
-	public static void printArray(int[][] array) {
+	public void printArray(int[][] array) {
 		for(int[] row : array) {
 			for(int value : row) {
 				System.out.print(value+" ");
@@ -108,7 +117,7 @@ public class Problem1 {
 		}
 	}
 	
-	public static void printArray(double[][] array) {
+	public void printArray(double[][] array) {
 		for(double[] row : array) {
 			for(double value : row) {
 				System.out.print(value+"   ");
@@ -116,10 +125,12 @@ public class Problem1 {
 			System.out.println();
 		}
 	}
-	public static void printArray(double[] array) {
+	public void printArray(double[] array) {
 			for(double value : array) {
 				System.out.print(value+"   ");
 			}
 			System.out.println();
 	}
 }
+
+

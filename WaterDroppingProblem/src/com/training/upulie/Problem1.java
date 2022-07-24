@@ -13,7 +13,7 @@ public class Problem1 {
 			{0,0,0,0,0,0,1},
 			{0,0,0,0,0,0,0}
 			};
-	static int s=3;
+	static int s=6;
 	
 
 	
