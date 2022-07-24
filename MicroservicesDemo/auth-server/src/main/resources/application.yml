@@ -1,0 +1,18 @@
+server:
+  port: 8282
+spring:
+  security:
+    user:
+      name: upulie
+      password: upulie123
+      roles: ADMIN,USER
+      
+#oauth2 properties
+security:
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: pin
+      access-token-validity-seconds: 3600 #one hour
+      authorized-grant-types: refresh_token,authorization_code,password,client_credentials
+      scope: READ,WRITE
