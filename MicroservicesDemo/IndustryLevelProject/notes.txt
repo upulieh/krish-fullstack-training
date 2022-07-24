@@ -1,0 +1,61 @@
+used services
+
+profile service -
+renting service -
+reporting module -
+models service -(where all the model classes will be) (will be a dependency to other services)(a dependency of this service will automatically be a dependency of other services which depend on it)
+
+used objects
+customer object - register, update, fetch for the customer object are done inside all the services. So better to have it as a separate service for models like this.
+
+To compile a maven project using cmd
+1)go inside the project
+2) mvn clean install
+
+to retrieve the config (such as config/service1.yml) file use,
+http://localhost:8191/service1/default
+
+If any values posted (while creating a record) become null, that's because of the individual values not being spelling correct in the model.
+
+If the model is changed (which is inside a seperate project),
+1) you need to recompile the pom.xml file (insdie commons project) (either using mvn clean install) or individually with mouse clicks
+2) recompile the profile-service's (main project) pom.xml file.
+3) rerun the service
+
+Authentication - who you are
+Authorization - what you can do
+
+The most widely used authentication technique for microservices is JWT and OAuth2.0
+
+OAuth2.0
+* Is a protocol for authorization
+* Token based authentication (to not disclose the username and password for other websites)
+* A way to delegate access without sharing credentials
+* It can grant a client to perform certain action on behalf of user
+* It is not to authenticate user (user has to be already authenticated to get the acess token.)
+* There are 3rd part oAuth providers such as Google,Facebook,Github 
+* Or we could have our own oAuth server.
+* Has expire time (for revoking) the token
+
+* Authorization server+ resource owner + client + resouce owner
+* authorization server (Google)(handles the process)
+* resource owner (you)
+* client (website/app)
+* resource server - where the resources are kept
+
+keywords in this process
+* acess token - a random string 
+* refresh token - same as access token, used to renew the access token once its expired and is within allowed refresh time
+* cliend-id/secret - given to the client to identify itself
+* scope - allowed permission
+* jwt - mechanism used to pass information between services. supports encryption
+
+grant types
+* authorization code - widely used  - client doesn't see the username & pw
+* client credentials
+* implicit
+* password - client obtains and sends the un & pw to the authorization server
+* device code
+
+
+
