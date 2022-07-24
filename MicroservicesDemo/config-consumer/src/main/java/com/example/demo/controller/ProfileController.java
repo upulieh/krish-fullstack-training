@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ProfileController {
 
-
     @Autowired
     MemberProfileConfiguration memberProfileConfiguration;
 
-
-    @RequestMapping(value="/profile")
+    @RequestMapping("/profile")
     public String getConfig(Model model){
 
         model.addAttribute("model",memberProfileConfiguration.getDefaultModel());
         model.addAttribute("min",memberProfileConfiguration.getMinRentPeriod());
-//        System.out.println(model.getAttribute("model")+" "+model.getAttribute("min"));
+        System.out.println(model.getAttribute("model")+" "+model.getAttribute("min"));
         return "mprofile";
 
     }
