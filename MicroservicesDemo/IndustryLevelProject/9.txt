@@ -1,0 +1,5 @@
+There are scenarios where you might want to store the token
+
+Also, there might be scenarios where you might not (You can use JWT which takes care of encrypting etc)
+
+Let's create a production safe auth server using database level authentication
