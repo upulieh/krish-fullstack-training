@@ -1,0 +1,52 @@
+whenever you register an application on the oauth2 server, the app will be provided with a client-id secret
+
+since no context path is given, the request path wouldn just be /oauth 
+
+The auth token request 
+POST request  - localhost:8282/oauth/token
+*add 'Basic Auth' 
+username as <client-id> 
+password as <pin>
+*add body (form URL encoded)
+grant_type as password
+username as authun
+password as authpw
+scope as READ (if you want to select the scope you want)(or else you will get all what is given from the server)
+
+you'll get the token and a refresh token
+as long as the same credentials is sent, the same expiration timer will run (deducting time till the hour is passed)
+
+how can we validate this token? (check token request)
+localhost:8282/oauth/check_token?token<token>
+ 
+however, for this to work (without being forbidden) the properties file should have the 
+security.oauth2.authorization.check-token-access: permitAll
+
+permitAll - means anyone(with or without un and pw) can access the resource of validating the token 
+
+once the UserConfiguration file is added the .yml file configurations can be removed. 
+Added below are what was deleted from it.
+spring:
+  security:
+    user:
+      name: authun
+      password: authpw
+      roles: ADMIN,USER
+security:
+  oauth2:
+    client:
+      client-id: mobile 
+      client-secret: pin
+      access-token-validity-seconds: 3600
+      authorized-grant-types: refresh_token,authorization_code,password,client_credentials
+      scope: READ,WRITE
+    authorization:
+      check-token-access: permitAll
+
+
+Now to retrieve the token as a user
+POST request  - localhost:8282/oauth/token
+*add 'Basic Auth' 
+username as <client-id> 
+password as <pin>
+

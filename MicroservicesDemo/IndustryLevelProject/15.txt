@@ -1,0 +1,7 @@
+service chaining
+* It is one of the enterprise implementation patterns (EIP)
+* A retrieved property from service 1 is used to call service 2
+
+Scatter gather pattern
+* Retrieving results for multiple services and gathering the results in the end to make up one result
+
