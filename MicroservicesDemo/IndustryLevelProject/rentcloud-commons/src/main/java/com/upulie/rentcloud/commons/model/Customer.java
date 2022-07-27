@@ -2,6 +2,7 @@ package com.upulie.rentcloud.commons.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +12,7 @@ public class Customer {
 	//each of the names of fields,setters and getters should match this exact convention (this is how the table columns are created)
 	//(case sensitive)
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO) //enabling auto-increment (used AUTO and using IDENTITY gives Field 'id' doesn't have a default value error)
 	int id;
 	String firstname;
 	String lastname;
@@ -48,7 +49,4 @@ public class Customer {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	
-	
-
 }

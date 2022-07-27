@@ -3,3 +3,30 @@ There are scenarios where you might want to store the token
 Also, there might be scenarios where you might not (You can use JWT which takes care of encrypting etc)
 
 Let's create a production safe auth server using database level authentication
+
+To auto create a db using hibernate the Spring Boot looks for 2 different files in the classpath 
+this script will be automatically run when the server is started
+schema.sql or data.sql
+
+This can also be done based on the profile.(you have to set which profile it is that you are in, on the property file in this case) For example
+schema-prod.sql
+schema-dev.sql
+schema-qa.sql
+
+If you create a file inside the resource directory of a maven project, it is considered in the classpath
+
+A regular service has a,
+model - models the data
+repository - connected to the datastore
+service - deals with data
+
+A spring security enabled service has a,
+model - an abstract model is given for us to implement
+service - UserDetailService is given so we can implement our own class
+
+unauthorized error - if un/pw is wrong
+
+
+
+
+

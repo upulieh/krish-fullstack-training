@@ -1,0 +1,41 @@
+How to make the profile service secure? (by making the profile server as a resource server)
+How do we make only the authorized people call this service? by making the resource server expecting a token from the client to access its resource
+
+Adding just the dependencies is enough to impose authorized access on a particular service
+The "generated password" (seen on the console while the server is started) can be used to access (as a basic authorization password) the service for development purposes
+
+If the response is as below,
+    "error": "unauthorized",
+    "error_description": "Full authentication is required to access this resource"
+you should mention on the properties file, where the service can validate the token using,
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile 
+      client-secret: pin
+
+To send the request with proper authorization,
+GET, http://localhost:8191/services/profiles
+In the header, 
+Header - Authorization 
+Value - bearer <token>
+
+
+how can we limit the access according to the role based permissions
+
+typically, role is assigned in a hierarchy (as admins don't perform any business operations)
+admin->...user
+
+and authority can be different
+Eg: CEO-> directors -> executives->managers->operators
+
+So we can set permission based on either of these
+1) authority
+2) role ->in this case each user must have a role
+3) or we can use both together like in this project too
+
+
+
+

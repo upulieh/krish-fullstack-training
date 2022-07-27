@@ -1,9 +1,19 @@
-
 server:
   port: 8192
   
-
+spring:
+ 
+ application:
+    name: vehicle    
     
+#where to validate the token (which is given with each request to this service)
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile 
+      client-secret: pin
 
 
 

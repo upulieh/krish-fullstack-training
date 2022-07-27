@@ -1,0 +1,48 @@
+Let's remove the need of the rest client (Postman) by making the service usable through a web client (browser)(front-end application)
+
+password credential store is usable if you trust the connection between the server and the client. 
+However this is not the usual use case
+There might be websites you don't trust that ask for github un and pw on their site.
+
+REST client,
+used password credential store (we provided un and pw for to talk to the password credential store) (in the body)
+now we need to change this into the authorization code flow
+
+Therefore, authorization code flow is for use cases where the user will hesitate to trust the client (to provide their social un and pws)
+
+Authorization Code Flow 
+has 4 componenets (authorization server, resource server, client, user)
+when the user tries to access the resource server through the client, if the user is not authenticated, the client will redirect the user to the authorization server
+Since authorization server (Google, Facebook) is the place where the user created the user account, the user can log into to it. 
+
+For authorization code flow to work, you need a web application (a new project)
+
+Thymeleaf - a UIframework
+
+After creating a simple bootstrap project, with the UIController class that maps home.html to "/" path
+You can use 
+username - user
+password - generated security password 
+to enter the home (http://localhost:8080)
+opening the same link on another tab now, doesn't require the un and pw
+using incognito requires the credentials again
+
+once the properties file is updated accordingly with the authorization server info, the above url will redirect the user to the authorization server's url
+now the un and pw should be
+krish
+pkrish
+
+Order of execution
+1 Going to http://localhost:8080 redirects to http://localhost:8080/login
+2 Entering username and password on http://localhost:8080/login redirects to http://localhost:9191 (to the auth server) along with the values in the url 
+3 Auth server asks from the authorize URL (http://localhost:9191/oauth/authorize)
+4 Enter the username and password on the "authorize URL" ro get redirected to the http://localhost:8080 with a login code. Also the cookie named KSESSION is storing the token.
+5  The UI sees this token and redirects to home.html page
+
+
+
+
+
+
+
+
