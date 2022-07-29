@@ -5,3 +5,10 @@ service chaining
 Scatter gather pattern
 * Retrieving results for multiple services and gathering the results in the end to make up one result
 
+
+scnerio
+cart and customer 
+
+we have separate dbs for all the services as having a single db might create a bottleneck when it comes to scaling services
+
+

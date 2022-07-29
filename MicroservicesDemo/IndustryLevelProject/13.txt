@@ -1,0 +1,5 @@
+In order to invoke profile service and use its endpoints, we need an access token
+Which we should send from rent-ui to profile-service
+This is the same token a user receives while they get signed 
+
+java.lang.NullPointerException: Cannot invoke "org.springframework.web.client.RestTemplate.exchange(String, org.springframework.http.HttpMethod, org.springframework.http.HttpEntity, java.lang.Class, Object[])" because "this.restTemplate" is null

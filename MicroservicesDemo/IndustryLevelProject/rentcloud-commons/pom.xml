@@ -8,13 +8,11 @@
 	<name>rentcloud-commons</name>
 	<description>For adding all the dependency models that are needed for the services throughout the whole rentacar project</description>
 	<dependencies>
-
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
 			<version>2.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
